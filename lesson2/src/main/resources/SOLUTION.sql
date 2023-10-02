@@ -1,14 +1,48 @@
-INSERT INTO DEFAULT.PUBLIC.STUDENT (name, GROUPNUMBER)
+INSERT INTO STUDENT (name, birthday, groupnumber)
 VALUES
-('Chris', 1),
-('Carl', 1),
-('Oliver', 2),
-('James', 2),
-('Lucas', 2),
-('Henry', 2),
-('Jacob', 3),
-('Logan', 3),
-('Mena', 4),
-('ALESHA', 5);
-
+('Jhon', '1999-10-11', 1 ),
+('Chris','1999-10-11', 1),
+('Carl','2001-12-21', 1),
+('Oliver','2001-12-21', 2),
+('James','2001-12-21', 2),
+('Lucas','2001-12-21', 2),
+('Henry','2001-12-21', 2),
+('Jacob','2001-12-21', 3),
+('Logan','2001-12-21', 3),
+('Mena','2001-12-21', 4),
+('Gerd','2001-12-21', 4),
+('Leon','2001-12-21', 5),
+('ALESHA','2001-12-21', 5);
+INSERT INTO SUBJECT (NAME, GRADE)
+VALUES
+('art', 1),
+('music', 1),
+('geography', 2),
+('history', 2),
+('PE', 3),
+('math', 3),
+('science', 4),
+('IT', 4),
+('chemistry', 5),
+('religion', 5);
+INSERT INTO PAYMENTTYPE(NAME)
+VALUES
+('DAILY'),
+('WEEKLY'),
+('MONTHLY');
+INSERT INTO PAYMENT(TYPE_ID, STUDENT_ID, AMOUNT, PAYMENT_DATE)
+VALUES
+((SELECT id FROM PAYMENTTYPE WHERE NAME = 'WEEKLY'), (SELECT id FROM STUDENT WHERE NAME = 'John'), 1234, '1970-01-01 00:00:01'),
+((SELECT id FROM PAYMENTTYPE WHERE NAME = 'MONTHLY'), (SELECT id FROM STUDENT WHERE NAME = 'Oliver'), 1234, '1970-01-01 00:00:01'),
+((SELECT id FROM PAYMENTTYPE WHERE NAME = 'WEEKLY'), (SELECT id FROM STUDENT WHERE NAME = 'Henry'), 1234, '1970-01-01 00:00:01'),
+((SELECT id FROM PAYMENTTYPE WHERE NAME = 'DAILY'), (SELECT id FROM STUDENT WHERE NAME = 'James'), 1234, '1970-01-01 00:00:01'),
+((SELECT id FROM PAYMENTTYPE WHERE NAME = 'WEEKLY'), (SELECT id FROM STUDENT WHERE NAME = 'Logan'), 1234, '1970-01-01 00:00:01');
+INSERT INTO MARK (STUDENT_ID, SUBJECT_ID, MARK)
+VALUES
+((SELECT id FROM STUDENT WHERE NAME = 'Chris'), (SELECT id FROM SUBJECT where NAME = 'art'), 8),
+(SELECT id FROM STUDENT WHERE NAME = 'Oliver', SELECT id FROM SUBJECT where NAME = 'history', 5),
+(SELECT id FROM STUDENT WHERE NAME = 'James', SELECT id FROM SUBJECT where NAME = 'geography', 9),
+(SELECT id FROM STUDENT WHERE NAME = 'Jacob', SELECT id FROM SUBJECT where NAME = 'math', 4),
+(SELECT id FROM STUDENT WHERE NAME = 'Logan', SELECT id FROM SUBJECT where NAME = 'PE', 9),
+(SELECT id FROM STUDENT WHERE NAME = 'John', SELECT id FROM SUBJECT where NAME = 'IT', 1);
 
