@@ -23,10 +23,6 @@ INSERT INTO subject (name, description, grade) VALUES ('Chemistry', 'Additional 
 insert into paymenttype ( name) values ( 'DAILY');
 insert into paymenttype ( name) values ('WEEKLY');
 insert into paymenttype ( name) values ( 'MONTHLY');
-INSERT INTO payment (type_id, amount, payment_date, student_id) VALUES ((SELECT id FROM paymenttype WHERE name = 'WEEKLY'), 100.00, '2022-01-15 10:30:00', (SELECT id FROM student WHERE name = 'John'));
-INSERT INTO payment (type_id, amount, payment_date, student_id) VALUES ((SELECT id FROM paymenttype WHERE name = 'MONTHLY'), 500.00, '2022-02-01 14:15:00', (SELECT id FROM student WHERE name = 'Oliver'));
-INSERT INTO payment (type_id, amount, payment_date, student_id) VALUES ((SELECT id FROM paymenttype WHERE name = 'WEEKLY'), 75.00, '2022-03-05 09:00:00', (SELECT id FROM student WHERE name = 'Henry'));
-INSERT INTO payment (type_id, amount, payment_date, student_id) VALUES ((SELECT id FROM paymenttype WHERE name = 'DAILY'), 10.00, '2022-04-10 16:45:00', (SELECT id FROM student WHERE name = 'James'));
 
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Chris'), (SELECT id FROM subject WHERE name = 'Art'), 8);
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Oliver'), (SELECT id FROM subject WHERE name = 'History'), 5);
@@ -34,3 +30,7 @@ INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student 
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Jacob'), (SELECT id FROM subject WHERE name = 'Math'), 4);
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Logan'), (SELECT id FROM subject WHERE name = 'PE'), 9);
 
+INSERT INTO payment (type_id, amount, payment_date, student_id) VALUES ((SELECT id FROM paymenttype WHERE name = 'WEEKLY'), 100.00, '2022-01-15 10:30:00', (SELECT id FROM student WHERE name = 'John'));
+INSERT INTO payment (type_id, amount, payment_date, student_id) VALUES ((SELECT id FROM paymenttype WHERE name = 'MONTHLY'), 500.00, '2022-02-01 14:15:00', (SELECT id FROM student WHERE name = 'Oliver'));
+INSERT INTO payment (type_id, amount, payment_date, student_id) VALUES ((SELECT id FROM paymenttype WHERE name = 'WEEKLY'), 75.00, '2022-03-05 09:00:00', (SELECT id FROM student WHERE name = 'Henry'));
+INSERT INTO payment (type_id, amount, payment_date, student_id) VALUES ((SELECT id FROM paymenttype WHERE name = 'DAILY'), 10.00, '2022-04-10 16:45:00', (SELECT id FROM student WHERE name = 'James'));
