@@ -1,50 +1,15 @@
-INSERT INTO STUDENT (name, birthday, groupnumber)
+INSERT INTO Student (name, birthday, groupnumber)
 VALUES
-('Jhon', '1999-10-11', 1 ),
-('Chris','1999-10-11', 1),
-('Carl','2001-12-21', 1),
-('Oliver','2001-12-21', 2),
-('James','2001-12-21', 2),
-('Lucas','2001-12-21', 2),
-('Henry','2001-12-21', 2),
-('Jacob','2001-12-21', 3),
-('Logan','2001-12-21', 3),
-('Mena','2001-12-21', 4),
-('Gerd','2001-12-21', 4),
-('Leon','2001-12-21', 5),
-('ALESHA','2001-12-21', 5);
-insert into subject (name, description, grade) values ('Raiders of Atlantis, The', 'Action|Mystery|Sci-Fi', 5);
-insert into subject (name, description, grade) values ('RAiders of Atlantis, The', 'Action|Mystery|Sci-Fi', 5);
-INSERT INTO SUBJECT (name, grade)
-VALUES
-('Art', 1),
-('Music', 1),
-('Geography', 2),
-('History', 2),
-('PE', 3),
-('Math', 3),
-('Science', 4),
-('IT', 4),
-('Chemistry', 5),
-('Religion', 5);
-INSERT INTO PAYMENTTYPE(name)
-VALUES
-('DAILY'),
-('WEEKLY'),
-('MONTHLY');
-INSERT INTO PAYMENT(type_id, student_id, amount, payment_date)
-VALUES
-((SELECT id FROM PAYMENTTYPE WHERE name = 'WEEKLY'), (SELECT id FROM STUDENT WHERE name = 'John'), 1234, '1970-01-01 00:00:01'),
-((SELECT id FROM PAYMENTTYPE WHERE name = 'MONTHLY'), (SELECT id FROM STUDENT WHERE name = 'Oliver'), 1234, '1970-01-01 00:00:01'),
-((SELECT id FROM PAYMENTTYPE WHERE name = 'WEEKLY'), (SELECT id FROM STUDENT WHERE name = 'Henry'), 1234, '1970-01-01 00:00:01'),
-((SELECT id FROM PAYMENTTYPE WHERE name = 'DAILY'), (SELECT id FROM STUDENT WHERE name = 'James'), 1234, '1970-01-01 00:00:01'),
-((SELECT id FROM PAYMENTTYPE WHERE name = 'WEEKLY'), (SELECT id FROM STUDENT WHERE name = 'Logan'), 1234, '1970-01-01 00:00:01');
-INSERT INTO MARK (student_id, subject_id, mark)
-VALUES
-((SELECT id FROM STUDENT WHERE NAME = 'Chris'), (SELECT id FROM SUBJECT where name = 'Art'), 8),
-(SELECT id FROM STUDENT WHERE NAME = 'Oliver', SELECT id FROM SUBJECT where name = 'History', 5),
-(SELECT id FROM STUDENT WHERE NAME = 'James', SELECT id FROM SUBJECT where NAME = 'Geography', 9),
-(SELECT id FROM STUDENT WHERE NAME = 'Jacob', SELECT id FROM SUBJECT where NAME = 'Math', 4),
-(SELECT id FROM STUDENT WHERE NAME = 'Logan', SELECT id FROM SUBJECT where NAME = 'PE', 9),
-(SELECT id FROM STUDENT WHERE NAME = 'John', SELECT id FROM SUBJECT where NAME = 'IT', 1);
-
+    ('John', '2005-01-15', 1),
+    ('Chris', '2006-03-22', 1),
+    ('Carl', '2007-05-10', 1),
+    ('Oliver', '2004-08-08', 2),
+    ('James', '2004-11-30', 2),
+    ('Lucas', '2005-02-17', 2),
+    ('Henry', '2005-06-14', 2),
+    ('Jacob', '2003-04-05', 3),
+    ('Logan', '2003-07-19', 3),
+    ('Emil', '2002-09-25', 4),
+    ('Jahn', '2002-12-12', 4),
+    ('Jak', '2001-02-28', 5),
+    ('Zak', '2001-05-20', 5);
