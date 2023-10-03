@@ -1,20 +1,18 @@
-INSERT INTO Student (name, birthday, groupnumber)
-VALUES
-    ('John', '2005-01-15', 1),
-    ('Chris', '2006-03-22', 1),
-    ('Carl', '2007-05-10', 1),
-    ('Oliver', '2004-08-08', 2),
-    ('James', '2004-11-30', 2),
-    ('Lucas', '2005-02-17', 2),
-    ('Henry', '2005-06-14', 2),
-    ('Jacob', '2003-04-05', 3),
-    ('Logan', '2003-07-19', 3),
-    ('Emil', '2002-09-25', 4),
-    ('Jahn', '2002-12-12', 4),
-    ('Jak', '2001-02-28', 5),
-    ('Zak', '2001-05-20', 5);
-INSERT INTO subject (name, description, grade)
-VALUES
+INSERT INTO Student (name, groupnumber) VALUES
+    ('John', 1),
+    ('Chris', 1),
+    ('Carl', 1),
+    ('Oliver', 2),
+    ('James', 2),
+    ('Lucas', 2),
+    ('Henry', 2),
+    ('Jacob', 3),
+    ('Logan', 3),
+    ('Emil', 4),
+    ('Jahn', 4),
+    ('Jak', 5),
+    ('Zak', 5);
+INSERT INTO subject (name, description, grade) VALUES
     ('Art', 'Art and music', 1),
     ('Music', 'Art and music', 1),
     ('Geography', 'Geography and history', 2),

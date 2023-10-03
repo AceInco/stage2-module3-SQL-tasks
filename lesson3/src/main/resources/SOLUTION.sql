@@ -1,6 +1,5 @@
 -- Change table 'Student': 'birthday' field cannot be null
-ALTER TABLE student
-ALTER COLUMN birthday SET NOT NULL;
+ALTER TABLE student ALTER COLUMN birthday SET NOT NULL;
 
 -- Change table 'Mark': 'mark' should be in the range from 1 to 10, 'student_id' and 'subject_id' cannot be null
 ALTER TABLE MARK
